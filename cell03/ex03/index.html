@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, #ft_list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        h1{
+            margin-top: 5%;
+        }
+        
+        button{
+            margin: 20px;
+            padding: 8px;
+            width: 40%;
+            cursor: pointer;
+        }
+        
+        #ft_list{
+            margin-top: 5vh;
+            padding: 24px;
+            width: 50%;
+        }
+        
+        .task{
+            width: 90%;
+            background-color: bisque;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .task:hover{
+            background-color: blanchedalmond;
+        }
+        </style>
+    <title>Todo</title>
+</head>
+<body>
+    <h1>TODO LIST</h1>
+    <div id="ft_list"></div>
+    <button onclick="newElement()" id="create">New</button>
+</body>
+<script src="todo.js"></script>
+</html>

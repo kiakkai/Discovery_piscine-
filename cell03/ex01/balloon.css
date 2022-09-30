@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    transition-duration: 420ms;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#balloon{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 100%;
+}

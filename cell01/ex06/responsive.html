@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tab</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .resize {
+        resize: both;
+        overflow: auto;
+      }
+      .position {
+        display: flex;
+      }
+      .one {
+        width: 100vw;
+        height: 100vh;
+        background-color: green;
+      }
+      .two {
+        width: 100vw;
+        height: 100vh;
+        background-color: pink;
+      }
+      .center {
+        align-items: center;
+        font-style: italic;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="position">
+      <div class="resize one position center"><p>First cell</p></div>
+      <div class="resize two position center"><p>second cell</p></div>
+    </div>
+  </body>
+</html>

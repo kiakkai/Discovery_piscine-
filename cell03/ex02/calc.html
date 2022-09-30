@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20%;
+        }
+
+        .calc-field{
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+        }
+
+        .dropdown {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .dropdown:hover{
+            border: black 1px solid;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .drop {
+            display: inline;
+            cursor: pointer;
+        }
+        .dropdown-content .drop:hover {
+            background-color: rgb(192, 192, 188);
+        }
+        .button {
+            background-color: darkgray;
+            padding: 1rem;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: grey;
+        }
+    </style>
+    <title>Calc-You-Later!</title>
+</head>
+<body>
+    <div class="calc-field">
+        <input type="text" id="numOne"></input>
+        <div class="dropdown">
+            <span id="select">+</span>
+            <div class="dropdown-content">
+                <div class="drop" id="plus" onclick="swapLabel('+')">+</div>
+                <div class="drop" id="minus" onclick="swapLabel('-')">-</div>
+                <div class="drop" id="divide" onclick="swapLabel('/')">/</div>
+                <div class="drop" id="mult" onclick="swapLabel('*')">*</div>
+                <div class="drop" id="mod" onclick="swapLabel('%')">%</div>
+            </div>
+        </div>
+        <input type="text" id="numTwo"></input>
+    </div>
+    <output type="text" id="out"></output>
+    <div class="button" id="calc" onclick="calculateOutput()">Try me!</div>
+</body>
+<script>
+
+    function swapLabel(op) {
+        document.getElementById("select").textContent = op;
+    }
+
+    function calculateOutput() {
+        var first = parseFloat(document.getElementById("numOne").value);
+        var second = parseFloat(document.getElementById("numTwo").value);
+        var out = document.getElementById("out");
+        var op = document.getElementById("select").textContent;
+        switch(op){
+            case "+":
+                out.value = first + second;
+                break;
+            case "-":
+                out.value = first - second;
+                break;
+            case "/":
+                out.value = first / second;
+                break;
+            case "*":
+                out.value = first * second;
+                break;
+            case "%":
+                out.value = first % second;
+                break;
+            default:
+                out.value = "Please select an option."
+        }
+        if (isNaN(first) || isNaN(second) || first < 0 || second < 0
+            || !Number.isInteger(first) || !Number.isInteger(second))
+            out.value = "Error :(";
+        if ((op == "/" || op == "%") && second == 0)
+            out.value = "It's over 9000!"
+        alert(out.value);
+        console.log(out.value);
+    }
+
+    function botherUser() {
+        alert("Please, use me...");
+    }
+
+    setInterval(botherUser, 30000);
+
+</script>
+</html>

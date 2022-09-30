@@ -1,0 +1,34 @@
+.one {
+  background: url("https://image-tc.galaxy.tf/wijpeg-cq9qm7slw8hd9605mmo1zri2g/heron-island-jetty-1.jpg?width=1920")
+    no-repeat;
+}
+.two {
+  background: url("https://instore.helloworld.com.au/-/media/microsites/branded/qld/helloworld-travel-biloela/Heron%20Turtle%203.ashx")
+    no-repeat;
+}
+
+.para {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.loading {
+  background-color: darkblue;
+  height: 50vh;
+  width: 100vw;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fontstyle {
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  color: azure;
+  font-size: 30px;
+}

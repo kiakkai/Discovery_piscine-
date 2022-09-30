@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="balloon.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div onclick="increaseBa(), changeColor()"  onmouseleave="decreaseBa(), inverseColor()" id="balloon"></div>
+</body>
+
+<script>
+    const balloon = document.getElementById("balloon");
+    const balloonStyle = getComputedStyle(balloon)
+
+    function increaseBa(){
+        let currHeight = balloon.offsetHeight;
+        let currWidth = balloon.offsetWidth;
+
+        balloon.style.height = currHeight + 10 + "px"
+        balloon.style.width = currWidth + 10 + "px"
+
+        if (currHeight > 420){
+            balloon.style.height = 200 + "px"
+            balloon.style.width = 200 + "px"
+        }
+    }
+
+    function changeColor(){
+        let balloonColor = balloonStyle.backgroundColor;
+
+        switch (balloonColor){
+            case 'rgb(255, 0, 0)':
+                balloon.style.backgroundColor = 'green';
+                break;
+            case 'rgb(0, 128, 0)':
+                balloon.style.backgroundColor = 'blue';
+                break;
+            case 'rgb(0, 0, 255)':
+                balloon.style.backgroundColor = 'red';
+                break;
+            }
+    }
+
+    function decreaseBa(){
+        let currHeight = balloon.offsetHeight;
+        let currWidth = balloon.offsetWidth;
+
+        if (currHeight > 200){
+            balloon.style.height = currHeight - 5 + "px"
+            balloon.style.width = currWidth - 5 + "px"
+        }
+    }
+
+    function inverseColor(){
+        let balloonColor = balloonStyle.backgroundColor;
+
+        switch (balloonColor){
+            case 'rgb(255, 0, 0)':
+                balloon.style.backgroundColor = 'blue';
+                break;
+            case 'rgb(0, 128, 0)':
+                balloon.style.backgroundColor = 'red';
+                break;
+            case 'rgb(0, 0, 255)':
+                balloon.style.backgroundColor = 'green';
+                break;
+            }
+    }
+</script>
+</html>

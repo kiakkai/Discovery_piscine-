@@ -1,0 +1,24 @@
+.resize{
+    resize:both;
+    overflow:auto;
+}
+.position{
+    display:flex;
+}
+.one
+{
+    width:100vw;
+    height: 100vh;
+    background-color: green;
+}
+.two
+{
+    width:100vw;
+    height:100vh;
+    background-color: pink;
+}
+.center{
+    align-items:center;
+    font-style:italic;
+    font-family: 'Courier New', Courier, monospace;
+}
